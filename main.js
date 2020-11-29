@@ -20,11 +20,10 @@ async function getData(user) {
 async function getRepos(userName) {
     const resp = await fetch(APIURL + userName + "/repos");
     const respData = await resp.json();
-    console.log(respData);
-    addRepostoCrad(respData);
     if (respData.message == "Not Found") {
         Main.innerHTML = "<h1>Not Found</h1>";
     }
+    addRepostoCrad(respData);
 }
 
 // USERNAME CALL HERE 
@@ -45,14 +44,14 @@ function createCard(user) {
                                         <p>${bio}</p>
                                     </div>
                                     <ul>
-                                        <li><ion-icon name="eye-outline" class="eye"></ion-icon>${followers}</li>
-                                        <li><ion-icon name="heart" class="heart"></ion-icon>${following}</li>
-                                        <li><ion-icon name="albums"></ion-icon>${public_repos}</li>
+                                        <li><b>Followers</b><ion-icon name="eye-outline" class="eye"></ion-icon><b>${followers}</b></li>
+                                        <li><b>Following</b><ion-icon name="heart" class="heart"></ion-icon><b>${following}</b></li>
+                                        <li><b>Repository</b><ion-icon name="albums"></ion-icon><b>${public_repos}</b></li>
                                     </ul>   
                              </div> 
                              </div>   
                              <div class="repos" id="repos">
-                             <h1>GITHUB REPOSITOTY</h1>
+                             <h1> TOP 10-GITHUB REPOSITORY</h1>
                              </div>        
     
               
@@ -69,7 +68,7 @@ function addRepostoCrad(repoData) {
     const reposEl = document.getElementById("repos");
     repoData.sort((a, b) =>
             b.stargazers_count - a.stargazers_count
-        ).slice(0, 11)
+        ).slice(0, 10)
         .forEach(e => {
             const repoEl = document.createElement("a");
             repoEl.classList.add("repo");

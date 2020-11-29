@@ -67,13 +67,14 @@ ul {
 }
 
 li {
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
     align-items: center;
     justify-content: space-around;
-    width: 70px;
+    min-width: 70px;
     border: 5px solid;
     border-radius: 1rem;
-    padding: 0.2rem;
+    padding: 0.3rem;
     background-color: #fcefee;
     color: black;
 }
