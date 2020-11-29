@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 18%, rgba(0, 212, 255, 1) 100%);
+    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title {
+    color: white;
+}
+
+input {
+    padding: 0.52rem 1.2rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    border: 2px solid rgb(2, 0, 36);
+    background: transparent;
+    color: rgb(255, 255, 255);
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 1);
+    background-color: #df5493;
+    border-color: #df5493;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.card {
+    background-color: #fc5c9c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+    min-height: 100px;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 1);
+}
+
+.avatar {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 1);
+    margin-right: 1rem;
+}
+
+ul {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70px;
+    border: 5px solid;
+    border-radius: 1rem;
+    padding: 0.2rem;
+    background-color: #fcefee;
+    color: black;
+}
+
+.heart {
+    color: rgb(255, 0, 0);
+}
+
+.eye {
+    color: rgb(97, 131, 5);
+}
+
+ion-icon {
+    font-size: 24px;
+}
+
+.repos {
+    width: 800px;
+    position: absolute;
+    text-align: center;
+    min-height: 100px;
+    overflow: auto;
+    background-color: rgb(10, 27, 27);
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+.repos h1 {
+    color: white;
+}
+
+.repo {
+    display: inline-block;
+    color: rgb(211, 210, 208);
+    text-decoration: none;
+    padding: 0.3rem;
+    background-color: rgba(0, 139, 139, 0.432);
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.repo:hover {
+    color: rgb(172, 201, 255);
+}
