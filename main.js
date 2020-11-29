@@ -22,6 +22,9 @@ async function getRepos(userName) {
     const respData = await resp.json();
     console.log(respData);
     addRepostoCrad(respData);
+    if (respData.message == "Not Found") {
+        Main.innerHTML = "<h1>Not Found</h1>";
+    }
 }
 
 // USERNAME CALL HERE 
@@ -30,31 +33,35 @@ getData("ARSHADKHAN615");
 //  CREATE USER  CARD
 function createCard(user) {
     const { avatar_url, name, bio, followers, following, public_repos } = user;
-    const cardHtml =
-        `<div class="card">
-                        <div>
-                                 <img src="${avatar_url}" alt="${name}" class="avatar">
-                        </div>
-                        <div class="info">
-                                <div>
-                                    <h1>${name}</h1>
-                                    <p>${bio}</p>
-                                </div>
-                                <ul>
-                                    <li><ion-icon name="eye-outline" class="eye"></ion-icon>${followers}</li>
-                                    <li><ion-icon name="heart" class="heart"></ion-icon>${following}</li>
-                                    <li><ion-icon name="albums"></ion-icon>${public_repos}</li>
-                                </ul>   
-                         </div> 
-                         </div>   
-                         <div class="repos" id="repos">
-                         <h1>GITHUB REPOSITOTY</h1>
-                         </div>        
+    if (user.name !== null) {
+        const cardHtml =
+            `<div class="card">
+                            <div>
+                                     <img src="${avatar_url}" alt="${name}" class="avatar">
+                            </div>
+                            <div class="info">
+                                    <div>
+                                        <h1>${name}</h1>
+                                        <p>${bio}</p>
+                                    </div>
+                                    <ul>
+                                        <li><ion-icon name="eye-outline" class="eye"></ion-icon>${followers}</li>
+                                        <li><ion-icon name="heart" class="heart"></ion-icon>${following}</li>
+                                        <li><ion-icon name="albums"></ion-icon>${public_repos}</li>
+                                    </ul>   
+                             </div> 
+                             </div>   
+                             <div class="repos" id="repos">
+                             <h1>GITHUB REPOSITOTY</h1>
+                             </div>        
+    
+              
+              `
 
-          
-          `
-
-    Main.innerHTML = cardHtml;
+        Main.innerHTML = cardHtml;
+    } else {
+        Main.innerHTML = "<h1>Result Not Found</h1>";
+    }
 }
 
 // CREATE REPO LINKS BOX 
